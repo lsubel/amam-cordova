@@ -1,0 +1,5 @@
+#############
+## SCSS
+#############
+
+platforms/android/build/*
