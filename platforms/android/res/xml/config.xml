@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="de.lsubel.amam" version="1.2.2" versionCode="122" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <preference name="loglevel" value="DEBUG" />
+    <feature name="Whitelist">
+        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <icon density="ldpi" src="www/res/logo-36x36.png" />
+    <icon density="mdpi" src="www/res/logo-48x48.png" />
+    <icon density="hdpi" src="www/res/logo-72x72.png" />
+    <icon density="xhdpi" src="www/res/logo-96x96.png" />
+    <name>Ask me anything meaningful</name>
+    <description>
+      In the 19th century answering these type of questions as part of a questionnaire were popular as society plays for the educated society. They should encourage conversation, help to learn about the interviewee and hear about their character.
+    </description>
+    <author email="github@lsubel.de" href="https://github.com/lsubel/amam">
+        Lukas Subel
+    </author>
+    <preference name="phonegap-version" value="cli-5.2.0" />
+    <preference name="orientation" value="portrait" />
+    <preference name="fullscreen" value="true" />
+    <preference name="permissions" value="none" />
+    <preference name="splash-screen-duration" value="0" />
+    <icon height="180" src="www/icon.png" width="180" />
+</widget>

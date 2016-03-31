@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title ln-id="menu.title">AMAM</title>
+  <link type="text/css" rel="stylesheet" href="css/normalize.css">
+  <link type="text/css" rel="stylesheet" href="css/skeleton.css">
+  <link type="text/css" rel="stylesheet" href="css/modal.css">
+  <link type="text/css" rel="stylesheet" href="css/main.css">
+  <link type="text/css" rel="stylesheet" href="css/color.css" title="backgroundsheet">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+
+  <section class="modal--show" id="popup-description" tabindex="-1" role="dialog" aria-labelledby="modal-label" aria-hidden="true">
+
+    <div class="modal-inner">
+      <div class="modal-content">
+        <div class="modal-content-row" id="modal-label">
+          <h2 ln-id="menu.description.label"></h2>
+        </div>
+        <div class="modal-content-row">
+          <p ln-id="menu.description" class="description"></p>
+        </div>
+        <div class="modal-content-row">
+          <h2 ln-id="menu.option.label"></h2>
+        </div>
+        <div class="modal-content-row">
+          <label ln-id="menu.questionnaires" class="questionnaires-selection-label" for="questionnairesSelection"></label>
+          <select class="questionnaires-selection u-full-width" id="questionnairesSelection"></select>
+        </div>
+        <div class="modal-content-row">
+          <label ln-id="menu.label.color" for="btn-newColor"></label>
+          <a class="button u-full-width button-newcolor" ln-id="menu.options.newcolor" id="btn-newColor"></a>
+          <input type="checkbox" id="cbsavecolor">
+          <label for="cbsavecolor" ln-id="menu.options.savecolor"></label>
+        </div>
+        <div class="modal-content-row modal-footer">
+          <span>(c) 2016 Lukas Subel, </span>
+          <span class="label-version"></span>
+          <span>, </span>
+          <a href="https://github.com/Sheak90/proust-questions">Source code</a>
+          <a class="button-reset">Reset</a>
+        </div>
+      </div>
+    </div>
+
+    <a href="#!" class="modal-close" title="Close this modal" data-close="Close" data-dismiss="modal">?</a>
+  </section>
+
+  <div class="main-container">
+
+    <div class="container menu-container">
+      <div class="modal-content-row">
+        <h1 ln-id="menu.title" class="title"></h1>
+      </div>
+      <div class="modal-content-row">
+        <a ln-id="menu.descriptionbutton" class="button u-full-width button-description" href="#popup-description"></a>
+      </div>
+    </div>
+    <div class="container question-container">
+      <div class="modal-content-row">
+        <h1 ln-id="menu.title" class="title"></h1>
+      </div>
+      <div class="modal-content-row">
+        <h4 ln-id="pad.question" class="question"></h4>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="container question-container-footer">
+      <div class="modal-content-row question-button-container">
+        <a ln-id="pad.back-to-menu" class="button u-full-width button-menu"></a>
+        <a ln-id="pad.random-question" class="button u-full-width button-random"></a>
+      </div>
+    </div>
+    <div class="container menu-container-footer">
+      <div class="modal-content-row menu-button-container">
+        <label ln-id="menu.lnselectionlabel" class="ln-selection-label" for="languageSelection"></label>
+        <select class="ln-selection u-full-width" id="languageSelection"></select>
+        <a ln-id="menu.startbutton" class="button u-full-width button-start"></a>
+      </div>
+    </div>
+  </footer>
+  <script src="js/modal.js"></script>
+  <script src="js/LocalStorageManager.js"></script>
+  <script src="js/KeyInputManager.js"></script>
+  <script src="js/ApplicationManager.js"></script>
+  <script src="js/TranslationManager.js"></script>
+  <script src="js/HTMLActuator.js"></script>
+  <script src="js/startup.js"></script>
+</body>
+
+</html>
