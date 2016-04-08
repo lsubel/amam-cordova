@@ -1,8 +1,8 @@
 document.addEventListener("deviceready", function(){
-  console.log("!!!!!!!!!!!!!!!!!!!!!!!! Device ready");
+  devlog("Device ready");
   var link = document.querySelector(".href-sourcecode");
   link.addEventListener("click", function(evt){
-      console.log("!!!!!!!!!!!!!!!!!!!!!!!! Click noticed");
+      devlog("User clicked on source code URL - opening browser");
       evt.preventDefault();
       var ref = cordova.InAppBrowser.open("https://github.com/lsubel/amam", "_system", "location=yes");
   });
