@@ -5,6 +5,9 @@
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="InAppBrowser">
+        <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
+    </feature>
     <icon density="ldpi" src="www/res/logo-36x36.png" />
     <icon density="mdpi" src="www/res/logo-48x48.png" />
     <icon density="hdpi" src="www/res/logo-72x72.png" />
