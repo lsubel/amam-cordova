@@ -9,5 +9,5 @@ The permissions requested during android installation are the result of the Cord
 If you want to contribute, go to the original application [(Link)](https://github.com/lsubel/amam).
 
 ## License
-All my code is licensed under the [MIT license.](https://github.com/Sheak90/amam/blob/master/LICENSE.txt). The cordova generated code is licensed under the [Apache license](http://www.apache.org/licenses/LICENSE-2.0.txt) (see LICENSE-2.0.txt).
+All my code is licensed under the [MIT license](https://github.com/Sheak90/amam/blob/master/LICENSE.txt). The cordova generated code is licensed under the [Apache license](http://www.apache.org/licenses/LICENSE-2.0.txt) (see LICENSE-2.0.txt).
 
