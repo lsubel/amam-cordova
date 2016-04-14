@@ -1,12 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="de.lsubel.amam" version="1.3.3" versionCode="133" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget android-versionCode="133" id="de.lsubel.amam" version="1.3.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <preference name="loglevel" value="DEBUG" />
     <feature name="Whitelist">
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
-    </feature>
-    <feature name="InAppBrowser">
-        <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
     </feature>
     <icon density="ldpi" src="www/res/logo-36x36.png" />
     <icon density="mdpi" src="www/res/logo-48x48.png" />
@@ -19,10 +16,16 @@
     <author email="github@lsubel.de" href="https://github.com/lsubel/amam">
         Lukas Subel
     </author>
+    <content src="index.html" />
+    <allow-intent href="https://github.com/*" />
     <preference name="phonegap-version" value="cli-5.2.0" />
     <preference name="orientation" value="portrait" />
-    <preference name="fullscreen" value="true" />
+    <preference name="fullscreen" value="false" />
     <preference name="permissions" value="none" />
     <preference name="splash-screen-duration" value="0" />
+    <preference name="androidlaunchmode" value="singleTop" />
+    <preference name="keeprunning" value="false" />
+    <preference name="loadurltimeoutvalue" value="5000" />
+    <preference name="disallowoverscroll" value="true" />
     <icon height="180" src="www/icon.png" width="180" />
 </widget>
