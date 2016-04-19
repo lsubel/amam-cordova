@@ -5,7 +5,7 @@
         jar="/home/lsubel/projects/amam-cordova/platforms/android/build/intermediates/exploded-aar/android/CordovaLib/unspecified/debug/classes.jar"
         jumboMode="false"
         revision="23.0.3"
-        sha1="e6b8d93b237ba44d83d21da0dc7d2b1271185c40">
+        sha1="1085958aa8c0bc4266821899a47dc8d0f171e8cb">
         <dex dex="/home/lsubel/projects/amam-cordova/platforms/android/build/intermediates/pre-dexed/debug/classes-82a6c2b26a51d1816e857436455f2e0b247f074a.jar" />
     </item>
     <item
