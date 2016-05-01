@@ -1,3 +1,7 @@
+/*
+ * Input Manager for desktop and mobile browsers
+ */
+
 function KeyboardInputManager() {
   this.events = {};
   this.listen();
@@ -11,7 +15,7 @@ KeyboardInputManager.prototype.on = function (event, callback) {
 };
 
 KeyboardInputManager.prototype.emit = function (event, data) {
-  devlog("Emit event '" + event + "': " + data);
+  devdebug("Emit event '" + event + (data ?  ("': " + JSON.stringify(data)) : ""));
   var callbacks = this.events[event];
   if (callbacks) {
     callbacks.forEach(function (callback) {
@@ -35,11 +39,17 @@ KeyboardInputManager.prototype.listen = function(){
   colorSaveOption.addEventListener("change",        this.setOption.bind(this));
   questionnaireSelection.addEventListener("change", this.selectQuestionnaire.bind(this));
 
-  this.bindButtonPress(".button-random",    this.newQuestion);
-  this.bindButtonPress(".button-menu",      this.showMenu);
-  this.bindButtonPress(".button-start",     this.showQuestion);
+  this.bindButtonPress(".button-random",        this.newQuestion);
+  this.bindButtonPress(".button-random-menu",   this.showMenu);
+  this.bindButtonPress(".button-list-menu",     this.showMenu);
+  this.bindButtonPress(".button-start-random",  this.showRandomQuestion);
+  this.bindButtonPress(".button-start-list",    this.showListQuestion);
+  this.bindButtonPress(".button-description",   this.showModal);
+  this.bindButtonPress(".modal-close",          this.closeModal);
+
   this.bindButtonPress(".button-newcolor",  this.newColor);
   this.bindButtonPress(".button-reset",     this.resetApplicationManager);
+
 };
 
 KeyboardInputManager.prototype.selectTranslation = function(event){
@@ -59,12 +69,28 @@ KeyboardInputManager.prototype.newQuestion = function(event){
 
 KeyboardInputManager.prototype.showMenu = function(event){
   event.preventDefault();
+  window.history.back();
   this.emit("showMenu");
 };
 
-KeyboardInputManager.prototype.showQuestion = function(event){
+KeyboardInputManager.prototype.showRandomQuestion = function(event){
   event.preventDefault();
-  this.emit("showQuestion");
+  window.location.hash = "random";
+  this.emit("showRandomQuestion");
+};
+
+KeyboardInputManager.prototype.showListQuestion = function(event){
+  event.preventDefault();
+    window.location.hash = "list";
+  this.emit("showListQuestion");
+};
+
+KeyboardInputManager.prototype.showModal = function(event){
+};
+
+KeyboardInputManager.prototype.closeModal = function(event){
+  event.preventDefault();
+  window.history.back();
 };
 
 KeyboardInputManager.prototype.newColor = function(event){
