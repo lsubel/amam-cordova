@@ -1,10 +1,15 @@
 devlog = function(str){
-  if(development)
+  if(console && console.log)
     console.log(str);
 };
 
+devdebug = function(str){
+  if(console && console.debug)
+    console.debug(str);
+};
+
 var startup = function() {
-  version = "1.3.4";
+  version = "1.4.0";
   development = false;
   new ApplicationManager(KeyboardInputManager, HTMLActuator, LocalStorageManager, TranslationManager, version);
 };

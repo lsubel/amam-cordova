@@ -6,23 +6,22 @@ function ApplicationManager(InputManager, Actuator, StorageManager, TranslationM
   this.translationManager = new TranslationManager(this.inputManager, this.storageManager);
 
   // register event handlers
-  this.inputManager.on("selectQuestionnaire",           this.selectQuestionnaire.bind(this));
-  this.inputManager.on("questionnaireInitialized",      this.addQuestionnaireToMenu.bind(this));
-  this.inputManager.on("allQuestionnairesInitialized",  this.allQuestionnairesInitialized.bind(this));
+  this.inputManager.on("selectQuestionnaire",                   this.selectQuestionnaire.bind(this));
+  this.inputManager.on("startedQuestionnaireInitializion",      this.addQuestionnaireToMenu.bind(this));
+  this.inputManager.on("startedAllQuestionnairesInitializion",  this.allQuestionnairesInitialized.bind(this));
   this.inputManager.on("languageInitialized",           this.addLanguageToMenu.bind(this));
   this.inputManager.on("allLanguageInitialized",        this.allLanguageInitialized.bind(this));
-  this.inputManager.on("setQuestionpackInfos",          this.setQuestionpackInfos.bind(this));
+  this.inputManager.on("setQuestionnaireInfos",         this.selectQuestionnaireInfos.bind(this));
   this.inputManager.on("translateUI",                   this.translateUI.bind(this));
   this.inputManager.on("newQuestion",                   this.generateNewQuestion.bind(this));
-  this.inputManager.on("showMenu",                      this.showMenu.bind(this));
-  this.inputManager.on("showQuestion",                  this.showQuestion.bind(this));
   this.inputManager.on("newColor",                      this.newBackgroundColor.bind(this));
   this.inputManager.on("setOption",                     this.setOption.bind(this));
-  if(development){
-    this.inputManager.on("resetApplicationManager",       this.resetApplicationManager.bind(this));
-  }
+
+  this.inputManager.on("resetApplicationManager",       this.resetApplicationManager.bind(this));
 
   this.initializeApplicationManager();
+
+  window.addEventListener("hashchange", this.listen.bind(this));
 }
 
 /*
@@ -48,7 +47,7 @@ ApplicationManager.prototype.initializeApplicationManager = function(){
   ];
 
   // bootstrap
-  this.first_available_questionnaire = "default";
+  this.first_available_questionnaire = "proust";
   this.translationManager.loadAvailableQuestionnaires();
   this.actuator.showVersion(version);
   this.extractBrowserLanguage();
@@ -69,15 +68,23 @@ ApplicationManager.prototype.selectQuestionnaire = function(questionnaire){
   var last_used_questionnaire = this.storageManager.getLastUsedQuestionnaire();
   this.storageManager.setLastUsedQuestionnaire(questionnaire);
   this.actuator.resetLanguages();
+  // add languages available for the selected questionnaire
   var lns = this.available_languages[questionnaire];
   this.addedLanguages = [];
   for(var i=0;i<lns.length;i++){
     var ln = lns[i];
     this.addLanguageToMenu(ln);
   }
+  // in case the questionnaire changed, update the authorship, list and UI
   if(questionnaire != last_used_questionnaire){
-    this.translateUI(lns[0]);
+    var authors = JSON.parse(this.storageManager.getAuthorshipInformation(questionnaire));
+    var ln = lns.indexOf(this.currentTranslation) >= 0 ? this.currentTranslation : lns[0];
+    this.actuator.updateAuthorship(authors);
+    this.actuator.fillQuestionList(this.total_number_of_questions[questionnaire]);
+    this.actuator.selectLanguage(ln);
+    this.translateUI(ln);
   }
+  // select a new question
   this.generateNewQuestion();
 };
 
@@ -143,9 +150,12 @@ ApplicationManager.prototype.allLanguageInitialized = function(){
 };
 
 ApplicationManager.prototype.bootstrapUI = function(questionnaire, ln){
+  this.actuator.fillQuestionList(this.total_number_of_questions[questionnaire]);
+  var authors = JSON.parse(this.storageManager.getAuthorshipInformation(questionnaire));
+  this.actuator.updateAuthorship(authors);
   this.translateUI(ln);
   this.generateNewQuestion();
-  this.showMenu();
+  this.listen();
   this.actuator.selectQuestionnaire(questionnaire);
   this.actuator.selectLanguage(ln);
   var storedColor;
@@ -168,7 +178,7 @@ ApplicationManager.prototype.addLanguageToMenu = function(ln) {
     }
 };
 
-ApplicationManager.prototype.setQuestionpackInfos = function(data) {
+ApplicationManager.prototype.selectQuestionnaireInfos = function(data) {
   if(data){
     var available_languages = data.available_languages;
     var questionnaire       = data.questionnaire;
@@ -190,6 +200,7 @@ ApplicationManager.prototype.generateNewQuestion = function() {
   this.current_question_id = new_id;
   var new_id_class = "pad.question-" + new_id;
   // show new language in the UI
+  devlog("Showing question with id '" + new_id + "'")
   this.actuator.setNewQuestion(new_id_class);
   this.translateUI(this.currentTranslation);
 };
@@ -197,6 +208,25 @@ ApplicationManager.prototype.generateNewQuestion = function() {
 /*
  * UI related event handlers
  */
+
+ ApplicationManager.prototype.listen = function() {
+    switch(location.hash){
+    case "#random":
+      this.showRandomQuestion();
+      break;
+    case "#list":
+      this.showListQuestion();
+      break;
+    case "#!":
+    case "":
+      this.showMenu();
+      break;
+    case "#popup-description":
+      break;
+    default:
+      console.log("UnknownHashException: " + location.hash);
+    }
+  };
 
  ApplicationManager.prototype.translateUI = function(ln) {
    var questionnaire = this.currentQuestionnaire;
@@ -207,13 +237,22 @@ ApplicationManager.prototype.generateNewQuestion = function() {
 
 ApplicationManager.prototype.showMenu = function() {
   this.actuator.showMenu();
-  this.actuator.hideQuestion();
+  this.actuator.hideListQuestion();
+  this.actuator.hideRandomQuestion();
 };
 
-ApplicationManager.prototype.showQuestion = function() {
-  this.actuator.showQuestion();
+ApplicationManager.prototype.showRandomQuestion = function() {
+  this.actuator.showRandomQuestion();
+  this.actuator.hideListQuestion();
   this.actuator.hideMenu();
 };
+
+ApplicationManager.prototype.showListQuestion = function() {
+  this.actuator.hideRandomQuestion();
+  this.actuator.showListQuestion();
+  this.actuator.hideMenu();
+};
+
 
 ApplicationManager.prototype.newBackgroundColor = function(color) {
   var next_color = color || this.available_colors[Math.floor(Math.random() * this.available_colors.length)];
