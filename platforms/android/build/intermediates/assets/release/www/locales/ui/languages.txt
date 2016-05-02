@@ -1,5 +1,0 @@
-{
-  "languages": [
-    "en", "de"
-  ]
-}

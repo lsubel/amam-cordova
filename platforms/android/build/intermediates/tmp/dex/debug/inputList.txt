@@ -1,2 +1,0 @@
-/home/lsubel/projects/amam-cordova/platforms/android/build/intermediates/classes/debug
-/home/lsubel/projects/amam-cordova/platforms/android/build/intermediates/pre-dexed/debug/classes-82a6c2b26a51d1816e857436455f2e0b247f074a.jar
