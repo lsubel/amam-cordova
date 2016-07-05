@@ -2,8 +2,8 @@
 <widget xmlns           = "http://www.w3.org/ns/widgets"
     xmlns:cdv           = "http://cordova.apache.org/ns/1.0"
     id                  = "de.lsubel.amam"
-    android-versionCode = "10400"
-    version             = "1.4.0">
+    android-versionCode = "10401"
+    version             = "1.4.1">
 
     <name>Ask me anything meaningful</name>
 

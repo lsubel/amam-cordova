@@ -1,6 +1,14 @@
 Change Log
 ==========
 
+1.4.1  *(2016-07-05)*
+--------------------
+
+* Added some french translations (thanks to @Panphico for the contribution)
+* Minor translation improvements (thanks to @ImingastoRollun)
+* Fixed bugs relatd to language change
+
+
 1.4.0  *(2016-05-02)*
 --------------------
 
