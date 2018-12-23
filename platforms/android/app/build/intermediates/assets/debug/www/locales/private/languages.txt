@@ -1,0 +1,17 @@
+{
+  "languages": [
+    "en", "de", "fr", "nl"
+  ],
+  "numberofquestions": 40,
+  "defaulttitle": "Konversationsstarter (private Fragen)",
+  "authorship": [
+    {
+      "name": "Arndt Adler",
+      "github": "aberlin"
+    },
+    {
+      "name": "Lukas Subel",
+      "github": "lsubel"
+    }
+  ]
+}

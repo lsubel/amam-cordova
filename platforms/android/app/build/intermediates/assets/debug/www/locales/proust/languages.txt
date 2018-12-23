@@ -1,0 +1,17 @@
+{
+  "languages": [
+    "en", "de", "fr", "nl"
+  ],
+  "numberofquestions": 31,
+  "defaulttitle": "Proust questions",
+  "authorship": [
+    {
+      "name": "Lukas Subel",
+      "github": "lsubel"
+    },
+    {
+      "name": "Panphico",
+      "github": "Panphico"
+    }
+  ]
+}

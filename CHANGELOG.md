@@ -1,6 +1,19 @@
 Change Log
 ==========
 
+1.5.0 *(2018-08-08)*
+
+* Added new questionnaires:
+  * "21 questions game"
+  * "Conversation Starters (personal questions)"
+  * "Questions for children between the ages of 7 and 14"
+  * "Culture conversation starters"
+* Added language support for dutch (thanks to @Vistaus)
+* Improve french questionnaires (thanks to @Panphico)
+* Fixed various typos in german questionnaires (thanks to @ConnyOnny)
+* Updated copyright year (thanks to @mueller-ma)
+
+
 1.4.1  *(2016-07-05)*
 --------------------
 

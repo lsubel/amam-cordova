@@ -1,0 +1,17 @@
+{
+  "languages": [
+    "en", "de", "fr", "nl"
+  ],
+  "numberofquestions": 18,
+  "defaulttitle": "Nerd",
+  "authorship": [
+    {
+      "name": "Lukas Subel",
+      "github": "lsubel"
+    },
+    {
+      "name": "Panphico",
+      "github": "Panphico"
+    }
+  ]
+}

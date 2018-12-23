@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/lukas/github/amam-cordova/platforms/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "map": [
+                {
+                    "source": "/home/lukas/github/amam-cordova/platforms/android/app/src/main/res/values/strings.xml",
+                    "from": {
+                        "startLines": "4,2,3",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "178,55,119",
+                        "endColumns": "63,63,58",
+                        "endOffsets": "237,114,173"
+                    },
+                    "to": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,119,183",
+                        "endColumns": "63,63,58",
+                        "endOffsets": "114,178,237"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,42 @@
+{
+  "ln"                        : "en",
+  "questionnaire-proust"     : "Proust Questionnaire",
+  "translations": {
+    "questionnaire-description"  : "In the 19th century answering these type of questions as part of a questionnaire were popular as society plays for the educated society. They should encourage conversation, help to learn about the interviewee and hear about their character.",
+
+    "pad.question-0": "Their motto?",
+    "pad.question-1": "Where do you want to live?",
+    "pad.question-2": "What is your idea of ​​perfect happiness?",
+    "pad.question-3": "Which faults are you most?",
+    "pad.question-4": "What is the greatest misfortune for you?",
+    "pad.question-5": "Your favorite fictional hero?",
+    "pad.question-6": "Your favorite figure in history?",
+    "pad.question-7": "Your favorite hero in reality?",
+    "pad.question-8": "Your favorite painter?",
+    "pad.question-9": "Your favorite author?",
+
+    "pad.question-10": "Your favorite composer?",
+    "pad.question-11": "What qualities do you appreciate in a woman the most?",
+    "pad.question-12": "What qualities do you appreciate in a man the most?",
+    "pad.question-13": "Your favorite virtue?",
+    "pad.question-14": "Your favorite activity?",
+    "pad.question-15": "Who or what would you like to be?",
+    "pad.question-16": "Your main character trait?",
+    "pad.question-17": "What do you appreciate the most in your friends?",
+    "pad.question-18": "Your biggest mistake?",
+    "pad.question-19": "Your favorite color?",
+
+    "pad.question-20": "Your favorite flower?",
+    "pad.question-21": "Your favorite bird?",
+    "pad.question-22": "My favorite poet?",
+    "pad.question-23": "Your heroines in history?",
+    "pad.question-24": "Your favorite name?",
+    "pad.question-25": "What do you most dislike?",
+    "pad.question-26": "What historical figures do you despise the most?",
+    "pad.question-27": "What reform do you most admire?",
+    "pad.question-28": "What natural gift would you like to have?",
+    "pad.question-29": "How would you like to die?",
+    
+    "pad.question-30": "Your current state of mind?"
+  }
+}

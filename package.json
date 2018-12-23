@@ -1,0 +1,13 @@
+{
+  "name": "de.lsubel.amam",
+  "version": "1.5.0",
+  "displayName": "Ask me anything meaningful",
+  "cordova": {
+    "platforms": [
+      "android"
+    ]
+  },
+  "dependencies": {
+    "cordova-android": "~7.0.0"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "languages": [
+    "en", "de", "nl"
+  ],
+  "numberofquestions": 2,
+  "defaulttitle": "Computer Science",
+  "authorship": [
+    {
+      "name": "Lukas Subel",
+      "github": "lsubel"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+#############
+## SCSS
+#############
+
+*.css.map
+intelxdk.*
+xdk/*
+*.xdk
+*.xdke

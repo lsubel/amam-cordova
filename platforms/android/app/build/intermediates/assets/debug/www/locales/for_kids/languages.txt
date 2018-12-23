@@ -1,0 +1,20 @@
+{
+  "languages": [
+    "de",
+    "en",
+    "fr",
+    "nl"
+  ],
+  "numberofquestions": 20,
+  "defaulttitle": "Fragen für Kinder im Alter zwischen 7 und 14",
+  "authorship": [
+    {
+      "name": "Arndt Adler",
+      "github": "aberlin"
+    },
+    {
+      "name": "Lukas Subel",
+      "github": "lsubel"
+    }
+  ]
+}
